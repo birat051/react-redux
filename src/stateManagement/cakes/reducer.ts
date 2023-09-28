@@ -4,7 +4,11 @@ const initState = {
     numOfCakes: 10
 }
 
-export const cakesReducer = (state = initState,action:ActionType)=>{
+export interface CakeState {
+    numOfCakes: number;
+}
+
+export const cakesReducer = (state = initState,action:ActionType):CakeState=>{
     switch(action.type)
     {
         case BUY_CAKE:

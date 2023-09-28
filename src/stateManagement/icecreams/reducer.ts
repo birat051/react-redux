@@ -5,7 +5,11 @@ const initState = {
     numOfIcecreams: 10
 }
 
-export const iceCreamReducer = (state = initState,action:ActionType)=>{
+export interface IceCreamState {
+    numOfIcecreams: number;
+}
+
+export const iceCreamReducer = (state = initState,action:ActionType):IceCreamState=>{
     switch(action.type)
     {
         case BUY_ICECREAM:

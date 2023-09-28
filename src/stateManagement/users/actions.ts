@@ -15,7 +15,7 @@ export function fetchUsersRequest()
     }
 }
 
-export function fetchUsersSuccess(payload:string[])
+export function fetchUsersSuccess(payload:string[]): userActionType
 {
     return {
         type: FETCH_USERS_SUCCESS,
@@ -23,7 +23,7 @@ export function fetchUsersSuccess(payload:string[])
     }
 }
 
-export function fetchUsersFailure(payload:string)
+export function fetchUsersFailure(payload:string): userActionType
 {
     return {
         type: FETCH_USERS_FAILURE,

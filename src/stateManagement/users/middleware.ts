@@ -1,6 +1,6 @@
 import axios from "axios"
 import type { Dispatch } from 'redux'
-import { fetchUsersFailure, fetchUsersSuccess } from "./actions"
+import { fetchUsersFailure, fetchUsersRequest, fetchUsersSuccess } from "./actions"
 
 interface User {
     id: number;
@@ -29,9 +29,12 @@ interface User {
 export const fetchUsers=()=>{
     return function(dispatch:Dispatch)
     {
+      dispatch(fetchUsersRequest())
+      setTimeout(()=>{
         axios.get('https://jsonplaceholder.typicode.com/users').then((response)=>{
             const usernames=response.data.map((user:User)=>user.name)
             dispatch(fetchUsersSuccess(usernames))
         }).catch((error)=>dispatch(fetchUsersFailure((error as Error).toString())))
+      },2000)
     }
 }
