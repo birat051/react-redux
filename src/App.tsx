@@ -4,6 +4,7 @@ import { RootState } from './stateManagement/store'
 import { buyCake } from './stateManagement/cakes/actions'
 import { buyIcecream } from './stateManagement/icecreams/actions'
 import { fetchUsers } from './stateManagement/users/middleware'
+// import CakeComponent from './components/CakeComponent'
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
       return <p key={user+index}>{user}</p>
      })}
      {users.error.length>0 && <p>{users.error}</p>}
+     {/* <CakeComponent /> */}
     </div>
   )
 }
